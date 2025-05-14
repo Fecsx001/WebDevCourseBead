@@ -1,0 +1,115 @@
+/* Add this to each of your CSS files or create a separate print.css */
+@media print {
+    /* General print reset */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Layout adjustments */
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12pt;
+    }
+
+    .container {
+        border: none !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Hide unnecessary elements */
+    .header, .footer, .mobile-menu-toggle, 
+    .menu-section, .theme-controls,
+    video, audio, iframe, form, .button-group {
+        display: none !important;
+    }
+
+    /* Content adjustments */
+    main {
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline !important;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
+    }
+
+    /* Tables */
+    table {
+        page-break-inside: avoid;
+        width: 100% !important;
+    }
+
+    tr {
+        page-break-inside: avoid;
+    }
+
+    th, td {
+        padding: 4px 8px !important;
+    }
+
+    /* Images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        page-break-inside: avoid;
+    }
+
+    /* Page breaks */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    /* Track details specific */
+    .track-detail {
+        max-height: none !important;
+        opacity: 1 !important;
+        position: relative !important;
+        margin-top: 0 !important;
+        page-break-inside: avoid;
+    }
+
+    /* Teams table specific */
+    .teams-table {
+        font-size: 10pt !important;
+    }
+
+    .team-car {
+        max-width: 200px !important;
+    }
+
+    /* Pilots table specific */
+    .content-table {
+        font-size: 10pt !important;
+    }
+
+    /* Forms - don't print */
+    form {
+        display: none !important;
+    }
+
+    /* Print header/footer */
+    @page {
+        size: auto;
+        margin: 1cm;
+        @top-center {
+            content: "Formula 1 - 2025 Season";
+            font-size: 14pt;
+        }
+        @bottom-right {
+            content: "Page " counter(page);
+            font-size: 10pt;
+        }
+    }
+}
