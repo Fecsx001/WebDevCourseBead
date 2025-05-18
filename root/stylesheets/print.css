@@ -1,0 +1,257 @@
+/* Print-specific styles for F1 website */
+@media print {
+    /* General reset for printing */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Layout adjustments */
+    body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    /* Hide unnecessary elements */
+    .header, .footer, 
+    .menu-button, .menu-section,
+    .theme-controls, .button-group,
+    video, audio, 
+    #dark-mode-toggle,
+    .skip-link, .logo {
+        display: none !important;
+    }
+
+    /* Show specific elements for printing */
+    .intro video[poster],  /* Show video thumbnail */
+    iframe,                /* Show iframe content */
+    details,               /* Force open details elements */
+    .track-card img,       /* Show track images */
+    form {                 /* Show form content */
+        display: block !important;
+    }
+
+    /* Force details elements to be open */
+    details > * {
+        display: block !important;
+    }
+
+    details[open] {
+        display: block !important;
+    }
+
+    /* Main content adjustments */
+    .container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    main {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: none !important;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline !important;
+        color: #000 !important;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 80%;
+        color: #666;
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+        page-break-after: avoid;
+        color: #000 !important;
+    }
+
+    h1 {
+        font-size: 18pt !important;
+        margin-top: 0.5cm !important;
+    }
+
+    h2 {
+        font-size: 16pt !important;
+    }
+
+    h3 {
+        font-size: 14pt !important;
+    }
+
+    /* Tables */
+    table {
+        page-break-inside: avoid;
+        width: 100% !important;
+        border-collapse: collapse;
+        margin: 0.5cm 0;
+        font-size: 10pt;
+    }
+
+    th, td {
+        padding: 4px 8px !important;
+        border: 1px solid #ddd !important;
+    }
+
+    th {
+        background-color: #f0f0f0 !important;
+        font-weight: bold;
+    }
+
+    /* Track details specific */
+    .track-container {
+        page-break-inside: avoid;
+        margin-bottom: 1cm;
+    }
+
+    .track-detail {
+        display: block !important;
+        max-height: none !important;
+        opacity: 1 !important;
+        position: relative !important;
+        margin-top: 0 !important;
+    }
+
+    .track-info {
+        page-break-inside: avoid;
+    }
+
+    .track-card img {
+        max-width: 300px !important;
+        height: auto !important;
+        margin-bottom: 0.5cm;
+    }
+
+    /* Teams table specific */
+    .team-car {
+        max-width: 150px !important;
+        height: auto !important;
+    }
+
+    .team-name {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    /* Pilots table specific */
+    .content-table {
+        font-size: 9pt !important;
+    }
+
+    .champion {
+        background-color: #ffffcc !important;
+    }
+
+    /* Form styling */
+    form {
+        display: block !important;
+        page-break-inside: avoid;
+    }
+
+    fieldset {
+        border: 1pt solid #000 !important;
+        page-break-inside: avoid;
+    }
+
+    legend {
+        font-weight: bold;
+    }
+
+    .form-group {
+        margin-bottom: 0.5cm;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+        border: 1pt solid #000 !important;
+        background: white !important;
+        color: black !important;
+    }
+
+    /* Images and flags */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .flag {
+        height: 10px !important;
+        display: inline-block;
+    }
+
+    /* Video description page */
+    .timestemp {
+        font-weight: normal;
+        color: #666;
+    }
+
+    /* Iframe styling (for countdown) */
+    iframe {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 300px;
+        border: 1pt solid #ddd !important;
+    }
+
+    /* Video poster/thumbnail */
+    .intro video[poster] {
+        content: attr(poster);
+        display: block !important;
+        width: 100% !important;
+        max-width: 500px !important;
+        height: auto !important;
+        margin: 0 auto;
+    }
+
+    /* Page breaks and margins */
+    @page {
+        size: A4;
+        margin: 1.5cm;
+        
+        @top-center {
+            content: "Formula 1 - 2025 Season";
+            font-size: 14pt;
+            border-bottom: 1pt solid #ddd;
+            padding-bottom: 0.5cm;
+        }
+        
+        @bottom-right {
+            content: "Page " counter(page);
+            font-size: 10pt;
+            color: #666;
+        }
+    }
+
+    /* Avoid breaking inside important elements */
+    .track-stats, 
+    .driver-name,
+    .team-points,
+    .career-stats {
+        page-break-inside: avoid;
+    }
+
+    /* Specific page adjustments */
+    .intro-section, 
+    .countdown-section {
+        page-break-after: avoid;
+    }
+
+    /* Hide decorative elements */
+    .rookie {
+        color: #000 !important;
+    }
+}

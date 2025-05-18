@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/forms.css">
+    <link rel="stylesheet" href="./stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="./stylesheets/high-contrast.css">
+    <title>F1 Szavazó Űrlap</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="https://www.formula1.com/" target="_blank">
+                <img src="./Képek/f1logored.png" alt="F1 Logo" class="logo">
+            </a>
+            <div class="menu-section">
+                <a href="./index.html" class="menu-button">Főmenü</a>
+                <a href="./pilotak.html" class="menu-button">Pilóták</a>
+                <a href="./teams.html" class="menu-button">Csapatok</a>
+                <a href="./tracks.html" class="menu-button">Pályák</a>
+                <!-- Buttons will be inserted here by JavaScript -->
+            </div>
+        </header>
+    </div>
+
+    <main>
+        <form action="mailto:xcf3r2@inf.elte.hu" method="get">
+            <fieldset>
+                <legend>Kedvenc csapat szavazás</legend>
+                
+                <div class="form-group">
+                    <label for="email">Email cím</label>
+                    <input type="email" name="email" id="email" placeholder="email@email.email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="favteam">Melyik a kedvenc csapatod?</label>
+                    <select name="favteam" id="favteam" required>
+                        <option value="">[Válassz csapatot]</option>
+                        <option value="mclaren">McLaren</option>
+                        <option value="ferrari">Ferrari</option>
+                        <option value="rb">Red Bull</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="aston">Aston Martin</option>
+                        <option value="alpine">Alpine</option>
+                        <option value="vcarb">Visa Cash App RB</option>
+                        <option value="haas">Haas</option>
+                        <option value="williams">Williams</option>
+                        <option value="kick">Kick Sauber</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Mióta ők a kedvenceid?</label>
+                    <input type="text" id="time" name="time" placeholder="2 éve" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="why">Miért ők a kedvenceid?</label>
+                    <textarea name="why" id="why" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>2026-os szabályváltozás - mennyire lesz sikeres a csapatod?</label>
+                    <div class="radio-group">
+                        <div class="radio-options">
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek1" value="1" required>
+                                <label for="ertek1">1</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek2" value="2" required>
+                                <label for="ertek1">2</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek3" value="3" required>
+                                <label for="ertek1">3</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek4" value="4" required>
+                                <label for="ertek1">4</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek5" value="5" required>
+                                <label for="ertek1">5</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek6" value="6" required>
+                                <label for="ertek1">6</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek7" value="7" required>
+                                <label for="ertek1">7</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek8" value="8" required>
+                                <label for="ertek1">8</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek9" value="9" required>
+                                <label for="ertek1">9</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="ertek" id="ertek10" value="10">
+                                <label for="ertek10">10</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="hirek" id="hirek">
+                    <label for="hirek">Szeretnék hírlevelet kapni</label>
+                </div>
+            </fieldset>
+
+            <div class="button-group">
+                <input type="submit" value="Küldés">
+                <input type="reset" value="Törlés">
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>Készítette: Fecsó András Balázs (xcf3r2)</p>
+        <p>xcf3r2@inf.elte.hu</p>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="./Scripts/darkmode.js"></script>
+    <script src="./Scripts/background-changer.js"></script>
+    <script src="./Scripts/high-contrast.js"></script>
+</body>
+</html>
